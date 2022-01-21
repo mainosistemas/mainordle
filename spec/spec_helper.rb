@@ -1,3 +1,3 @@
 require "rspec"
-require "mainordle/word"
-require "mainordle/dictionary"
+
+require "mainordle/game"

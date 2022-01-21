@@ -1,3 +1,5 @@
+require "mainordle/word"
+
 module Mainordle
   class Dictionary
     def initialize(words)
