@@ -3,13 +3,17 @@ module Mainordle
     ONLY_LETTERS = /\A[a-z]+\z/i
 
     def initialize(word)
-      @word = word
+      @word = word.upcase
 
       validate_word!
     end
 
     def letters
       @word.split(//)
+    end
+
+    def ==(other)
+      letters == other.letters
     end
 
     private

@@ -50,10 +50,30 @@ describe Mainordle::Word do
   end
 
   describe "#letters" do
-    it "returns the word's letters as an array" do
+    it "returns the word's upcased letters as an array" do
       word = described_class.new("letra")
 
-      expect(word.letters).to eq %w(l e t r a)
+      expect(word.letters).to eq %w(L E T R A)
+    end
+  end
+
+  describe "#==" do
+    context "when the words are equal" do
+      it "returns true" do
+        expect(described_class.new("valid")).to eq described_class.new("valid")
+      end
+    end
+
+    context "when the words are equal, but with different casing" do
+      it "returns true" do
+        expect(described_class.new("VALID")).to eq described_class.new("valid")
+      end
+    end
+
+    context "when the words are different" do
+      it "returns false" do
+        expect(described_class.new("valid")).not_to eq described_class.new("abril")
+      end
     end
   end
 end
