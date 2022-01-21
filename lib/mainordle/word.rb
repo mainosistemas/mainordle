@@ -7,5 +7,9 @@ module Mainordle
     def valid?
       @word.size == 5
     end
+
+    def letters
+      @word.split(//)
+    end
   end
 end
